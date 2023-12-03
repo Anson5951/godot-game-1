@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d06b2yta2tnhp"]
+
+[ext_resource type="Script" path="res://element.gd" id="1_fse5p"]
+[ext_resource type="Texture2D" uid="uid://2pv26cgcaqev" path="res://image/panel_fire.png" id="2_e1hxy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unair"]
+size = Vector2(123, 125)
+
+[node name="fire" type="Area2D"]
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_fse5p")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_e1hxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_unair")
