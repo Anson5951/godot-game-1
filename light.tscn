@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cypdnrx63hv1j"]
+
+[ext_resource type="Script" path="res://element.gd" id="1_ibvb8"]
+[ext_resource type="Texture2D" uid="uid://n0y22jlglwv8" path="res://image/panel_light.png" id="2_t8ke5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unair"]
+size = Vector2(123, 125)
+
+[node name="light" type="Area2D"]
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_ibvb8")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_t8ke5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_unair")
