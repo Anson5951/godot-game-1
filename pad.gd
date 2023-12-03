@@ -8,48 +8,21 @@ var positions = [
 	Vector2(grip_step * 1, grip_step * 1),
 	Vector2.ZERO
 ];
-var initial_positions = [
-	Vector2(64, 192),
-	Vector2(64 + 128, 192),
-	Vector2(64 + 128 * 2, 192),
-	Vector2(64 + 128 * 3, 192),
-	Vector2(64 + 128 * 4, 192),
-]
-
-var test_elements = []
 var placing_index = 0
 var is_posistions_full = false
-var can_place_element = false
-#
-func _init():
-	var my_lambda = func (message):
-		print(message)
-
+var is_mouse_entered = false
+signal element_placed
 
 func _ready():
-	mouse_entered.connect(func(): can_place_element = !is_posistions_full)
-	test_elements = [
-		$"../fire",
-		$"../fire2",
-		$"../fire3",
-		$"../fire4",
-		$"../fire5"
-	]
-	for index in test_elements.size():
-		init_element_iniial_position(test_elements[index], index)
-
-func init_element_iniial_position(element, index):
-	element.initial_position = initial_positions[index]
-
-func print_my_shit():
-	print('asd')
+	mouse_entered.connect(func(): is_mouse_entered = !is_posistions_full)
 
 func _process(delta):	
-	for index in test_elements.size():
-		check_placing_element(test_elements[index], index)
+	for index in get_parent().element_in_ready_area.size():
+		if(check_placing_element(get_parent().element_in_ready_area[index], index)):
+			element_placed.emit({"placed_pad": self, "used_element_index": index})
 
 func check_placing_element(element, index):
-	if  element.is_drop and ! element.is_placed and overlaps_area(element) and can_place_element:
+	if  element.is_drop and ! element.is_placed and overlaps_area(element) and is_mouse_entered:
 		element.scale = Vector2(0.43,0.43)
 		element.position = self.position+positions[placing_index]
 		element.z_index = placing_index
@@ -58,4 +31,7 @@ func check_placing_element(element, index):
 		element.is_placed = true
 		placing_index = placing_index + 1
 		is_posistions_full = placing_index == 5
-		can_place_element = false
+		is_mouse_entered = false
+		return true
+	else:
+		return false
