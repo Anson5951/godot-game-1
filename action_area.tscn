@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs55316jip6wp"]
+[gd_scene load_steps=7 format=3 uid="uid://bs55316jip6wp"]
 
 [ext_resource type="Script" path="res://action_area.gd" id="1_va63b"]
 [ext_resource type="Texture2D" uid="uid://p5nkr3tily03" path="res://image/vEubtow9Ag_small.jpg" id="2_y8h5q"]
 [ext_resource type="Script" path="res://pad.gd" id="3_tb2nh"]
 [ext_resource type="Texture2D" uid="uid://5gndjdo2yhux" path="res://image/pad.png" id="4_r0qxu"]
-[ext_resource type="PackedScene" uid="uid://b7761840eewis" path="res://fire.tscn" id="5_s1cam"]
 [ext_resource type="Script" path="res://reset.gd" id="6_8vu1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfdd8"]
@@ -77,26 +76,6 @@ texture = ExtResource("4_r0qxu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pad5"]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_vfdd8")
-
-[node name="element1" parent="." instance=ExtResource("5_s1cam")]
-z_index = 6
-position = Vector2(64, 192)
-
-[node name="element2" parent="." instance=ExtResource("5_s1cam")]
-z_index = 6
-position = Vector2(192, 192)
-
-[node name="element3" parent="." instance=ExtResource("5_s1cam")]
-z_index = 6
-position = Vector2(320, 192)
-
-[node name="element4" parent="." instance=ExtResource("5_s1cam")]
-z_index = 6
-position = Vector2(448, 192)
-
-[node name="element5" parent="." instance=ExtResource("5_s1cam")]
-z_index = 6
-position = Vector2(576, 192)
 
 [node name="reset" type="Button" parent="."]
 offset_left = 768.0

@@ -6,4 +6,5 @@ func _ready():
 	self.pressed.connect(func(): reset())
 
 func reset():
+	print('reset')
 	get_tree().reload_current_scene()

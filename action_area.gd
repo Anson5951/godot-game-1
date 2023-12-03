@@ -23,17 +23,8 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	prepare_pads()
-	element_in_ready_area = [
-		$"element1",
-		$"element2",
-		$"element3",
-		$"element4",
-		$"element5"
-	]
-#	generate_element_in_ready_area()
+	generate_element_in_ready_area()
 	generate_element_in_queue()
-	for index in element_in_ready_area.size():
-		init_element_iniial_position(element_in_ready_area[index], index)
 
 func prepare_pads():
 	pads = [
@@ -51,14 +42,19 @@ func _process(delta):
 	pass
 
 func generate_element_in_ready_area():
+	print('generate_element_in_ready_area')
 	for index in 5:
+		print(index)
 		var random_element_index = rng.randi_range ( 0, 6 )
 		var new_element = load(elements_names[random_element_index]).instantiate()
 		new_element.set_script(load("res://element.gd"))
 		new_element.z_index = 6
+		init_element_iniial_position(new_element, index)
+		add_child(new_element)
 		element_in_ready_area.append(new_element)
 
 func generate_element_in_queue():
+	print('generate_element_in_queue')
 	for index in 25:
 		var random_element_index = rng.randi_range ( 0, 6 )
 		var new_element = load(elements_names[random_element_index]).instantiate()
@@ -67,11 +63,13 @@ func generate_element_in_queue():
 		element_in_queue.append(new_element)
 
 func _on_pad_element_placed(input):
+	print('_on_pad_element_placed')
 	var index_of_placed_pad = pads.find(input['placed_pad'])
 	var placed_pad = pads[index_of_placed_pad]
 	add_new_element_into_ready_area(input['used_element_index'])
 
 func add_new_element_into_ready_area(used_element_index):
+	print('add_new_element_into_ready_area')
 	var new_element = element_in_queue[0]
 	element_in_ready_area[used_element_index] = new_element
 	add_child(new_element)
