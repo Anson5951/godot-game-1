@@ -1,6 +1,9 @@
 extends Area2D
 
+# pad中一小格的長寬
 var grip_step = 27;
+# 元素被拉進來時能坐落的位置
+# 依序是左上、右上、左下、右下、正中間
 var positions = [
 	Vector2(grip_step * -1, grip_step * -1),
 	Vector2(grip_step * 1, grip_step * -1),
@@ -8,9 +11,13 @@ var positions = [
 	Vector2(grip_step * 1, grip_step * 1),
 	Vector2.ZERO
 ];
+# 紀錄下一個要放在第幾個位置
 var placing_index = 0
+# 紀錄是否已經放滿5個元素
 var is_posistions_full = false
+# 小夫 我進來囉
 var is_mouse_entered = false
+# 用於通知行動區有元素已經被成功放置了
 signal element_placed
 
 func _ready():
