@@ -18,6 +18,15 @@ var elements_names = [
 	"res://water.tscn",
 	"res://wind.tscn"
 ]
+var elements_ratio = [
+	14,
+	14,
+	16,
+	14,
+	14,
+	14,
+	14
+]
 # 會拖拉元素進去的地方
 var pads = []
 # 準備區的元素
@@ -47,8 +56,7 @@ func prepare_pads():
 func generate_element_in_ready_area():
 	print('generate_element_in_ready_area')
 	for index in 5:
-		# 隨機選擇0~6之中的一個數字，用於生成新的元素
-		var random_element_index = rng.randi_range ( 0, 6 )
+		var random_element_index = radom_generate_element_index_by_ratio()
 		var new_element = generate_element(random_element_index)
 		# 設定元素的初始位置
 		init_element_iniial_position(new_element, index)
@@ -62,10 +70,19 @@ func generate_element_in_ready_area():
 func generate_element_in_queue():
 	print('generate_element_in_queue')
 	for index in 25:
-		var random_element_index = rng.randi_range ( 0, 6 )
+		var random_element_index = radom_generate_element_index_by_ratio()
 		var new_element = generate_element(random_element_index)
 		element_in_queue.append(new_element)
 
+# 按照比例隨機選擇0~6之中的一個數字，用於生成新的元素
+func radom_generate_element_index_by_ratio():
+	var sum = elements_ratio.reduce(func(accum, number): return accum + number)
+	var picked_number = rng.randi_range( 1, sum )
+	for elements_ratio_index in elements_ratio.size():
+		picked_number -= elements_ratio[elements_ratio_index]
+		if picked_number <= 0:
+			return elements_ratio_index
+			
 # 建立元素
 func generate_element(index):
 	# 將元素實例化
