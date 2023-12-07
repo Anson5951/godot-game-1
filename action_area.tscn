@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs55316jip6wp"]
+[gd_scene load_steps=8 format=3 uid="uid://bs55316jip6wp"]
 
 [ext_resource type="Script" path="res://action_area.gd" id="1_va63b"]
 [ext_resource type="Texture2D" uid="uid://p5nkr3tily03" path="res://image/vEubtow9Ag_small.jpg" id="2_y8h5q"]
 [ext_resource type="Script" path="res://pad.gd" id="3_tb2nh"]
 [ext_resource type="Texture2D" uid="uid://5gndjdo2yhux" path="res://image/pad.png" id="4_r0qxu"]
+[ext_resource type="Script" path="res://calculate.gd" id="6_3vi1i"]
 [ext_resource type="Script" path="res://reset.gd" id="6_8vu1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfdd8"]
@@ -84,6 +85,14 @@ offset_right = 896.0
 offset_bottom = 192.0
 text = "reset"
 script = ExtResource("6_8vu1g")
+
+[node name="calculate" type="Button" parent="."]
+offset_left = 768.0
+offset_top = 32.0
+offset_right = 896.0
+offset_bottom = 96.0
+text = "calculate"
+script = ExtResource("6_3vi1i")
 
 [connection signal="element_placed" from="pad1" to="." method="_on_pad_element_placed"]
 [connection signal="element_placed" from="pad2" to="." method="_on_pad_element_placed"]
