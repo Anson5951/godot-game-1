@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ek302ajpusb8"]
+
+[ext_resource type="Texture2D" uid="uid://p5nkr3tily03" path="res://image/vEubtow9Ag_small.jpg" id="1_v5vs5"]
+
+[node name="battle_scene" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 900.0
+offset_bottom = 1200.0
+texture = ExtResource("1_v5vs5")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+offset_right = 380.0
+offset_bottom = 880.0

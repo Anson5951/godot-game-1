@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnc77n8cdpft3" path="res://image/panel_wind.png" id="2_85a1c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unair"]
-size = Vector2(123, 125)
+size = Vector2(155.556, 155.556)
 
 [node name="wind" type="Area2D"]
 scale = Vector2(0.9, 0.9)
@@ -12,8 +12,10 @@ script = ExtResource("1_ybp4r")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.33786e-06, 3.33786e-06)
+scale = Vector2(1.244, 1.244)
 texture = ExtResource("2_85a1c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0.5)
+position = Vector2(-3.17891e-06, -3.17891e-06)
 shape = SubResource("RectangleShape2D_unair")

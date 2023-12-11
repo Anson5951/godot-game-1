@@ -1,7 +1,7 @@
 extends Area2D
 
 # pad中一小格的長寬
-var grip_step = 27
+var grip_step = 35
 # 元素被拉進來時能坐落的位置
 # 依序是左上、右上、左下、右下、正中間
 var positions = [
@@ -32,7 +32,7 @@ func _process(delta):
 
 func check_placing_element(element, index):
 	if  element.is_drop and ! element.is_placed and overlaps_area(element) and is_mouse_entered:
-		element.scale = Vector2(0.43,0.43)
+		element.scale = Vector2(0.44,0.44)
 		element.position = self.position+positions[placing_index]
 		element.z_index = placing_index
 		element.input_pickable = false

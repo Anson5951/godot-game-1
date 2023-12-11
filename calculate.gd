@@ -1,38 +1,38 @@
 extends Button
 
 
-var number_of_elements = {
-	 "dark" : 0,
-	 "fire" : 0,
-	 "heart" : 0,
-	 "light" : 0,
-	 "none" : 0,
-	 "water" : 0,
-	 "wind" : 0,
-}
-var normal_skill_1 = {
-	 "dark" : 0,
-	 "fire" : 0,
-	 "heart" : 0,
-	 "light" : 0,
-	 "none" : 0,
-	 "water" : 0,
-	 "wind" : 0,
-}
-var normal_skill_2 = {
-	"dark" : 0,
-	"fire" : 0,
-	"heart" : 0,
-	"light" : 0,
-	"none" : 0,
-	"water" : 0,
-	"wind" : 0,
-}
 	
 func _ready():
 	self.pressed.connect(func(): calculate())
 
 func calculate():
+	var number_of_elements = {
+		 "dark" : 0,
+		 "fire" : 0,
+		 "heart" : 0,
+		 "light" : 0,
+		 "none" : 0,
+		 "water" : 0,
+		 "wind" : 0,
+	}
+	var normal_skill_1 = {
+		 "dark" : 0,
+		 "fire" : 0,
+		 "heart" : 0,
+		 "light" : 0,
+		 "none" : 0,
+		 "water" : 0,
+		 "wind" : 0,
+	}
+	var normal_skill_2 = {
+		"dark" : 0,
+		"fire" : 0,
+		"heart" : 0,
+		"light" : 0,
+		"none" : 0,
+		"water" : 0,
+		"wind" : 0,
+	}
 	var pads = [
 		"/root/action_area/pad1",
 		"/root/action_area/pad2",
@@ -58,8 +58,8 @@ func calculate():
 			'water: ', (number_of_elements.water), ', ',
 			'wind: ', (number_of_elements.wind), ', '
 			)
-		calculate_normal_skill_2_rule()
-		calculate_normal_skill_1_rule()
+		calculate_normal_skill_2_rule(number_of_elements, normal_skill_2)
+		calculate_normal_skill_1_rule(number_of_elements, normal_skill_1)
 			
 	print('normal_skill_1: ')
 	print('dark: ', normal_skill_1['dark'])
@@ -79,7 +79,7 @@ func calculate():
 	print('wind: ', normal_skill_2['wind'])	
 
 # rules from character might be {dark: 2} or {dark: 1, light: 1}
-func calculate_normal_skill_1_rule():
+func calculate_normal_skill_1_rule(number_of_elements, normal_skill_1):
 	# 假設全部屬性都能觸發normal skill 1
 	if number_of_elements.dark >= 2:
 		normal_skill_1.dark += 1
@@ -114,7 +114,7 @@ func calculate_normal_skill_1_rule():
 		number_of_elements.wind -=2
 	pass
 
-func calculate_normal_skill_2_rule():	
+func calculate_normal_skill_2_rule(number_of_elements, normal_skill_2):	
 	# 假設全部屬性都能觸發normal skill 2
 	if number_of_elements.dark >= 4:
 		normal_skill_2.dark += 1

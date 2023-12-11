@@ -10,11 +10,21 @@ config_version=5
 
 [application]
 
-config/name="demo"
+config/name="godot-game-1"
 run/main_scene="res://action_area.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=750
+window/size/viewport_height=1000
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="demo"
+
+[rendering]
+
+renderer/rendering_method="mobile"

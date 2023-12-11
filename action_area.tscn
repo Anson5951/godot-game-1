@@ -8,91 +8,164 @@
 [ext_resource type="Script" path="res://reset.gd" id="6_8vu1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfdd8"]
-size = Vector2(116, 112)
+size = Vector2(140, 140)
 
 [node name="action_area" type="Node2D"]
 script = ExtResource("1_va63b")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 896.0
+offset_right = 1500.0
+offset_bottom = 20000.0
+scale = Vector2(0.5, 0.05)
 texture = ExtResource("2_y8h5q")
 
-[node name="pad1" type="Area2D" parent="."]
-position = Vector2(64, 64)
-script = ExtResource("3_tb2nh")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="pad1"]
-texture = ExtResource("4_r0qxu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pad1"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_vfdd8")
-
-[node name="pad2" type="Area2D" parent="."]
-position = Vector2(192, 64)
-script = ExtResource("3_tb2nh")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="pad2"]
-texture = ExtResource("4_r0qxu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pad2"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_vfdd8")
-
-[node name="pad3" type="Area2D" parent="."]
-position = Vector2(320, 64)
-script = ExtResource("3_tb2nh")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="pad3"]
-texture = ExtResource("4_r0qxu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pad3"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_vfdd8")
-
-[node name="pad4" type="Area2D" parent="."]
-position = Vector2(448, 64)
-script = ExtResource("3_tb2nh")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="pad4"]
-texture = ExtResource("4_r0qxu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pad4"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_vfdd8")
-
-[node name="pad5" type="Area2D" parent="."]
-position = Vector2(576, 64)
-script = ExtResource("3_tb2nh")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="pad5"]
-texture = ExtResource("4_r0qxu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pad5"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_vfdd8")
-
 [node name="reset" type="Button" parent="."]
-offset_left = 768.0
-offset_top = 128.0
-offset_right = 896.0
-offset_bottom = 192.0
+offset_left = 610.0
+offset_top = 410.0
+offset_right = 735.0
+offset_bottom = 475.0
 text = "reset"
 script = ExtResource("6_8vu1g")
 
 [node name="calculate" type="Button" parent="."]
-offset_left = 768.0
-offset_top = 32.0
-offset_right = 896.0
-offset_bottom = 96.0
+offset_left = 440.0
+offset_top = 400.0
+offset_right = 580.0
+offset_bottom = 480.0
 text = "calculate"
 script = ExtResource("6_3vi1i")
+
+[node name="pad1" type="Area2D" parent="."]
+position = Vector2(75, 600)
+script = ExtResource("3_tb2nh")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pad1"]
+position = Vector2(-1.00136e-05, -6.67572e-06)
+scale = Vector2(1.23894, 1.23894)
+texture = ExtResource("4_r0qxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pad1"]
+position = Vector2(-7.62939e-06, 0)
+shape = SubResource("RectangleShape2D_vfdd8")
+
+[node name="pad2" type="Area2D" parent="."]
+position = Vector2(225, 600)
+script = ExtResource("3_tb2nh")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pad2"]
+position = Vector2(3.8147e-06, -2.19345e-05)
+scale = Vector2(1.23894, 1.23894)
+texture = ExtResource("4_r0qxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pad2"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_vfdd8")
+
+[node name="pad3" type="Area2D" parent="."]
+position = Vector2(375, 600)
+script = ExtResource("3_tb2nh")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pad3"]
+position = Vector2(7.62939e-06, -1.52588e-05)
+scale = Vector2(1.23894, 1.23894)
+texture = ExtResource("4_r0qxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pad3"]
+shape = SubResource("RectangleShape2D_vfdd8")
+
+[node name="pad4" type="Area2D" parent="."]
+position = Vector2(525, 600)
+script = ExtResource("3_tb2nh")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pad4"]
+position = Vector2(-1.52588e-05, 7.62939e-06)
+scale = Vector2(1.23894, 1.23894)
+texture = ExtResource("4_r0qxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pad4"]
+shape = SubResource("RectangleShape2D_vfdd8")
+
+[node name="pad5" type="Area2D" parent="."]
+position = Vector2(675, 600)
+script = ExtResource("3_tb2nh")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="pad5"]
+position = Vector2(1.52588e-05, -1.52588e-05)
+scale = Vector2(1.23894, 1.23894)
+texture = ExtResource("4_r0qxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pad5"]
+shape = SubResource("RectangleShape2D_vfdd8")
+
+[node name="ready_area_1" type="Area2D" parent="."]
+position = Vector2(75, 750)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ready_area_1"]
+position = Vector2(-1.00136e-05, -6.67572e-06)
+scale = Vector2(1.23894, 1.23894)
+texture = ExtResource("4_r0qxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ready_area_1"]
+position = Vector2(-7.62939e-06, 0)
+shape = SubResource("RectangleShape2D_vfdd8")
+
+[node name="ready_area_2" type="Area2D" parent="."]
+position = Vector2(225, 750)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ready_area_2"]
+position = Vector2(-1.00136e-05, -6.67572e-06)
+scale = Vector2(1.23894, 1.23894)
+texture = ExtResource("4_r0qxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ready_area_2"]
+position = Vector2(-7.62939e-06, 0)
+shape = SubResource("RectangleShape2D_vfdd8")
+
+[node name="ready_area_3" type="Area2D" parent="."]
+position = Vector2(375, 750)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ready_area_3"]
+position = Vector2(-1.00136e-05, -6.67572e-06)
+scale = Vector2(1.23894, 1.23894)
+texture = ExtResource("4_r0qxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ready_area_3"]
+position = Vector2(-7.62939e-06, 0)
+shape = SubResource("RectangleShape2D_vfdd8")
+
+[node name="ready_area_4" type="Area2D" parent="."]
+position = Vector2(525, 750)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ready_area_4"]
+position = Vector2(-1.00136e-05, -6.67572e-06)
+scale = Vector2(1.23894, 1.23894)
+texture = ExtResource("4_r0qxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ready_area_4"]
+position = Vector2(-7.62939e-06, 0)
+shape = SubResource("RectangleShape2D_vfdd8")
+
+[node name="ready_area_5" type="Area2D" parent="."]
+position = Vector2(675, 750)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ready_area_5"]
+position = Vector2(-1.00136e-05, -6.67572e-06)
+scale = Vector2(1.23894, 1.23894)
+texture = ExtResource("4_r0qxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ready_area_5"]
+position = Vector2(-7.62939e-06, 0)
+shape = SubResource("RectangleShape2D_vfdd8")
 
 [connection signal="element_placed" from="pad1" to="." method="_on_pad_element_placed"]
 [connection signal="element_placed" from="pad2" to="." method="_on_pad_element_placed"]

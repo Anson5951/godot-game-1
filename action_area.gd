@@ -2,11 +2,11 @@ extends Node2D
 
 # 元素的起始位置
 var initial_positions = [
-	Vector2(64, 192),
-	Vector2(64 + 128, 192),
-	Vector2(64 + 128 * 2, 192),
-	Vector2(64 + 128 * 3, 192),
-	Vector2(64 + 128 * 4, 192),
+	Vector2(75, 750),
+	Vector2(75 + 150, 750),
+	Vector2(75 + 150 * 2, 750),
+	Vector2(75 + 150 * 3, 750),
+	Vector2(75 + 150 * 4, 750),
 ]
 # 7元素的檔案，用於生成元素
 var elements_names = [
